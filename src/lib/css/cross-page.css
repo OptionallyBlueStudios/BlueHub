@@ -1,17 +1,21 @@
 /* === Background and Global Text Styles === */
 body {
-    background: linear-gradient(to bottom, #CE5937 0%, #2B2743 0%, #201F58 100%);
+    background: linear-gradient(to bottom, #9C3D28 0%, #1B1A2E 0%, #120F3A 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
     color: white;
     font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
 }
+
 /* === Headings === */
 h1, h2, h3 {
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    font-variation-settings: "wdth" 100;
+    font-variation-settings: "wdth" 400;
     margin: 0.5em 1em;
 }
 
