@@ -1,0 +1,68 @@
+/* === Background and Global Text Styles === */
+body {
+    background: linear-gradient(to bottom, #CE5937 0%, #2B2743 0%, #201F58 100%);
+    color: white;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* === Headings === */
+h1, h2, h3 {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    margin: 0.5em 1em;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+h2 {
+    font-weight: 380;
+}
+
+h3 {
+    font-weight: 350;
+}
+
+/* === Paragraphs === */
+p {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 479;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    margin: 0.5em 1em;
+}
+
+/* === Footer Styling === */
+footer {
+    background-color: #111;
+    padding: 2em 1em;
+    margin-top: 3em;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    border-top: 2px solid #444;
+}
+
+footer a {
+    color: #67bfff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .commit,
+footer .contact {
+    margin-bottom: 1.5em;
+}
+
+footer h3.commit {
+    margin: 0.3em 0;
+    font-weight: 400;
+    font-size: 1em;
+}
