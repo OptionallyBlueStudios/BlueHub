@@ -1,55 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <script>
-        // Fetch latest commit message and description
-        fetch('https://api.github.com/repos/OptionallyBlueStudios/BlueHub/commits?per_page=1')
-            .then(res => res.json())
-            .then(res => {
-                let inputString = res[0].commit.message;
-                let parts = inputString.split('\n\n');
-                let joint1 = "Commit Name: " + parts[0];
-                let joint2 = "Commit Description: " + (parts[1] || "No description provided");
-                document.getElementById('message').innerHTML = joint1;
-                document.getElementById('desc').innerHTML = joint2;
-            });
-
-        // Fetch latest commit author
-        fetch('https://api.github.com/repos/OptionallyBlueStudios/BlueHub/commits?per_page=1')
-            .then(res => res.json())
-            .then(res => {
-                let output = "Commit Author: " + res[0].commit.author.name;
-                document.getElementById('author').innerHTML = output;
-            });
-
-        // Fetch GitHub Pages status
-        fetch('https://api.github.com/repos/OptionallyBlueStudios/BlueHub/pages/builds/latest')
-            .then(res => res.json())
-            .then(data => {
-                let statusText = "Status: ";
-                if (data.status === "built") {
-                    statusText += "Published";
-                } else if (data.status === "building") {
-                    statusText += "Publishing / Building";
-                } else if (data.status === "errored") {
-                    statusText += "Error during build";
-                } else {
-                    statusText += "Unknown";
-                }
-                document.getElementById('status').innerHTML = statusText;
-            })
-            .catch(err => {
-                document.getElementById('status').innerHTML = "Status: Unable to fetch";
-                console.error(err);
-            });
-    </script>
-
-    <!-- Stylesheet CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OptionallyBlueStudios/bluehub@main/src/lib/css/cross-page.css" />
-
-    <title>BlueHub Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/lib/css/cross-page.css">
+    <title>Document</title>
 </head>
 <body>
+    <h1>h1 HEADEr</h1>
+    <h2>h2 HEADEr</h2>
+    <h3>h3 HEADEr</h3>
+    <p>p TEXt</p>
+</body>
+</html>
