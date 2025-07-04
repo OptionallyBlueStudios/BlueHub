@@ -3,6 +3,10 @@ body {
     background: -moz-linear-gradient(top, #CE5937 0%, #0f0e18 0%, #060611 100%);
     background: -webkit-linear-gradient(top, #CE5937 0%, #0f0e18 0%, #060611 100%);
     background: linear-gradient(to top, #CE5937 0%, #0f0e18 0%, #060611 100%);
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+
     color: white;
 }
 
