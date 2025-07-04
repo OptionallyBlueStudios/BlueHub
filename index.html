@@ -1,18 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Corrected/Example CSS CDN (replace with actual path if different) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OptionallyBlueStudios/bluehub/css/cross-page.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>BlueHub Page</title>
+    <script>
+        // Fetch latest commit message and description
+        fetch('https://api.github.com/repos/OptionallyBlueStudios/BlueHub/commits?per_page=1')
+            .then(res => res.json())
+            .then(res => {
+                let inputString = res[0].commit.message;
+                let parts = inputString.split('\n\n');
+                let joint1 = "Commit Name: " + parts[0];
+                let joint2 = "Commit Description: " + (parts[1] || "No description provided");
+                document.getElementById('message').innerHTML = joint1;
+                document.getElementById('desc').innerHTML = joint2;
+            });
+
+        // Fetch latest commit author
+        fetch('https://api.github.com/repos/OptionallyBlueStudios/BlueHub/commits?per_page=1')
+            .then(res => res.json())
+            .then(res => {
+                let output = "Commit Author: " + res[0].commit.author.name;
+                document.getElementById('author').innerHTML = output;
+            });
+
+        // Fetch GitHub Pages status
+        fetch('https://api.github.com/repos/OptionallyBlueStudios/BlueHub/pages/builds/latest')
+            .then(res => res.json())
+            .then(data => {
+                let statusText = "Status: ";
+                if (data.status === "built") {
+                    statusText += "Published";
+                } else if (data.status === "building") {
+                    statusText += "Publishing / Building";
+                } else if (data.status === "errored") {
+                    statusText += "Error during build";
+                } else {
+                    statusText += "Unknown";
+                }
+                document.getElementById('status').innerHTML = statusText;
+            })
+            .catch(err => {
+                document.getElementById('status').innerHTML = "Status: Unable to fetch";
+                console.error(err);
+            });
+    </script>
+
+    <!-- Stylesheet CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/OptionallyBlueStudios/bluehub/css/cross-page.css" />
+
+    <title>BlueHub Page</title>
 </head>
 <body>
-  <h1>H1 Header</h1>
-  <h2>H2 Header</h2>
-  <h3>H3 Header</h3>
-  <p>Paragraph text goes here.</p>
-</body>
-</html>
+    <h1>H1 Header</h1>
+    <h2>H2 Header</h2>
+    <h3>H3 Header</h3>
+    <p>Paragraph text goes here.</p>
+
+    <footer style="background-color: black;"> <!-- FOOTER -->
+        <div class="commit">
+            <p>Latest Commit On <a href="https://github.com/OptionallyBlueStudios/BlueHub">GitHub</a></p>
+            <br />
+            <h3 id="message" class="commit">Loading commit name...</h3>
