@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueHub Navigation</title>
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="https://optionallybluestudios.github.io/BlueHub/src/lib/css/cross-page.css" />
+  <!-- Optional Google Fonts Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    /* General page styles */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #000000;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Fullscreen iframe under navbar */
+.main-frame {
+  position: absolute;
+  top: 60px; /* height of navbar */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 60px); /* subtract navbar height */
+  border: none;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="/index.html">Home</a>
+    <a href="/savedit">Save Editors</a>
+    <a href="/launch">Launcher</a>
+    <a href="/about">About</a>
+  </div>
+
+  <!-- Main Page Content -->
+  <iframe
+    src="https://es3.tusinean.ro/"
+    class="main-frame"
+    frameborder="0"
+    allowfullscreen
+  ></iframe>
+
+</body>
+</html>
