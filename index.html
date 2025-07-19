@@ -5,69 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlueHub Navigation</title>
   <style>
+    /* Global styles */
     body {
-      background: #CE5937;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
       background: linear-gradient(to top, #CE5937 0%, #0f0e18 0%, #060611 100%);
       background-repeat: no-repeat;
       background-size: cover;
-      min-height: 100vh;
-      margin: 0;
-      padding: 0;
       color: white;
       font-family: "Roboto", sans-serif;
     }
 
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 20px;
+    /* Navigation bar container */
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 15px 30px;
       display: flex;
-      gap: 20px;
+      justify-content: flex-start;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    li {
-      display: inline;
-    }
-
-    a {
-      text-decoration: none;
+    /* Navigation links */
+    .navbar a {
       color: white;
-      font-weight: bold;
-      padding: 10px 15px;
-      background-color: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+      padding: 10px 20px;
+      margin-right: 10px;
       border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    a:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-    }
-
-    h1, h2, p {
-      font-optical-sizing: auto;
-      font-style: normal;
-      font-variation-settings: "wdth" 100;
-    }
-
-    h1 {
+      transition: background-color 0.3s;
       font-weight: bold;
     }
 
-    h2 {
-      font-weight: 380;
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
-    p {
-      font-weight: 479;
+    /* Page content for testing */
+    .content {
+      padding: 40px;
     }
   </style>
 </head>
 <body>
-  <ul>
-    <li><a href="default.html">Home</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="default.html">Home</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </div>
+
+  <!-- Main Page Content -->
+  <div class="content">
+    <h1>Welcome to BlueHub</h1>
+    <p>This is your main page content.</p>
+  </div>
+
 </body>
 </html>
