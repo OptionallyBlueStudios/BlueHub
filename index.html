@@ -1,25 +1,73 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/lib/css/cross-page.css">
-    <title>Document</title>
-    <style>
-        ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueHub Navigation</title>
+  <style>
+    body {
+      background: #CE5937;
+      background: linear-gradient(to top, #CE5937 0%, #0f0e18 0%, #060611 100%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      color: white;
+      font-family: "Roboto", sans-serif;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      gap: 20px;
+    }
+
+    li {
+      display: inline;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 10px 15px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    a:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    h1, h2, p {
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-variation-settings: "wdth" 100;
+    }
+
+    h1 {
+      font-weight: bold;
+    }
+
+    h2 {
+      font-weight: 380;
+    }
+
+    p {
+      font-weight: 479;
+    }
+  </style>
 </head>
 <body>
-    <ul>
-        <li><a href="default.asp">Home</a></li>
-        <li><a href="news.asp">News</a></li>
-        <li><a href="contact.asp">Contact</a></li>
-        <li><a href="about.asp">About</a></li>
-    </ul>
+  <ul>
+    <li><a href="default.html">Home</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
 </body>
 </html>
