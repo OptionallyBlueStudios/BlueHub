@@ -21,8 +21,16 @@
 
   <!-- Main Page Content -->
   <div class="content">
-    <button onclick="DownloadCSpy()">Download</button>
+    <button onclick="installCheatSpy()">Download</button>
   </div>
-
+<script>
+    function installCheatSpy() {
+        window.pywebview.api.installCHeatSpy().then(response => {
+            alert(response);
+        }).catch(err => {
+            alert("Error calling local script");
+        });
+    }
+</script>
 </body>
 </html>
