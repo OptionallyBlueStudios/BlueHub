@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlueHub Navigation</title>
-  
-  <!-- Link external CSS -->
+
+  <!-- External CSS -->
   <link rel="stylesheet" href="src/lib/css/cross-page.css" />
-  
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
@@ -20,8 +20,35 @@
       padding: 0;
     }
 
+    .navbar {
+      background-color: #000000;
+      padding: 15px 30px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
     .content {
-      padding: 20px;
+      padding: 40px;
+    }
+
+    .guide-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .guide-card {
@@ -33,7 +60,8 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       text-align: center;
       transition: all 0.3s ease;
-      margin-bottom: 20px;
+      flex: 0 1 300px;
+      height: 230px;
     }
 
     .guide-card h2 {
@@ -71,24 +99,38 @@
   <!-- Main Page Content -->
   <div class="content">
     <h1>Guides</h1>
-    <div class="guide-card">
-      <h2>CheatSpy Base Guide</h2>
-      <p>
-        The base guide for CheatSpy, showing how to use it, but in basic terms. 
-        It demonstrates editing your money value in the game One Armed Robber. 
-        This guide is made for users wanting to learn the basics.
-      </p>
-      <button 
-        onclick="openUrl('https://optionallybluestudios.github.io/BlueHub/iframe?url=https://www.youtube.com/embed/KmRfqZnGSQY&prev=https://optionallybluestudios.github.io/guides')">
-        View
-      </button>
+
+    <div class="guide-container">
+      <div class="guide-card">
+        <h2>CheatSpy Base Guide</h2>
+        <p>
+          The base guide for CheatSpy, showing how to use it in basic terms.
+          Demonstrates editing money value in the game One Armed Robber.
+          Perfect for beginners.
+        </p>
+        <button onclick="openUrl('https://optionallybluestudios.github.io/BlueHub/iframe?url=https://www.youtube.com/embed/KmRfqZnGSQY&prev=https://optionallybluestudios.github.io/BlueHub/guides')">
+          Play Guide
+        </button>
+      </div>
+
+      <div class="guide-card">
+        <h2>CheatSpy Installation Guide</h2>
+        <p>
+          Learn how to install CheatSpy with this quick guide. Supports both
+          dev and normal versions. Dev requires BlueHub Premium login. You can
+          get a dev login by registering through the link in our discord.
+        </p>
+        <button onclick="openUrl('https://optionallybluestudios.github.io/BlueHub/cspy')">
+          Open CheatSpy Page
+        </button>
+      </div>
     </div>
 
-    <p>
-      To add your own guide to this page, click 
-      <a href="https://optionallybluestudios.github.io/BlueHub/iframe?url=https://forms.gle/EBy537UiSpD2LGfR6&prev=https://optionallybluestudios.github.io/BlueHub/guides">
-        here.
-      </a>
+    <p style="margin-top: 40px;">
+      To add your own guide to this page, click
+      <a href="https://optionallybluestudios.github.io/BlueHub/iframe?url=https://forms.gle/EBy537UiSpD2LGfR6&prev=https://optionallybluestudios.github.io/BlueHub/guides" style="color: #3399ff;">
+        here
+      </a>.
     </p>
   </div>
 
