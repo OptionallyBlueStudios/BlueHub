@@ -58,3 +58,35 @@ h2 {
 p {
   font-weight: 479;
 }
+
+a {
+  color: #00bfff; /* Bright cyan-blue */
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #1e90ff; /* Slightly deeper blue on hover */
+  border-bottom: 2px solid #1e90ff;
+}
+
+/* Modern button */
+button {
+  background-color: #1e1e1e;
+  color: #fff;
+  border: 2px solid #333;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+button:hover {
+  background-color: #333;
+  border-color: #555;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+}
