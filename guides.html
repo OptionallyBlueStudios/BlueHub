@@ -4,10 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlueHub Navigation</title>
+  
   <!-- Link external CSS -->
   <link rel="stylesheet" href="src/lib/css/cross-page.css" />
-  <!-- Optional Google Fonts Roboto -->
+  
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #0e0e14;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .guide-card {
+      background: #191a24;
+      color: white;
+      width: 300px;
+      padding: 20px;
+      border-radius: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .guide-card h2 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .guide-card:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+    }
+
+    .guide-card button {
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
 
@@ -20,10 +62,34 @@
     <a href="https://optionallybluestudios.github.io/BlueHub/guides">Guides</a>
   </div>
 
+  <script>
+    function openUrl(url) {
+      window.location = url;
+    }
+  </script>
+
   <!-- Main Page Content -->
   <div class="content">
     <h1>Guides</h1>
-    <p>Oh.. sorry.. there are no guides right now. SOoooooooooo you can suggest one by creating a github gist and giving the link to us via <a href="https://forms.gle/EBy537UiSpD2LGfR6">this form</a></p>
+    <div class="guide-card">
+      <h2>CheatSpy Base Guide</h2>
+      <p>
+        The base guide for CheatSpy, showing how to use it, but in basic terms. 
+        It demonstrates editing your money value in the game One Armed Robber. 
+        This guide is made for users wanting to learn the basics.
+      </p>
+      <button 
+        onclick="openUrl('https://optionallybluestudios.github.io/BlueHub/iframe?url=https://www.youtube.com/embed/KmRfqZnGSQY&prev=https://optionallybluestudios.github.io/guides')">
+        View
+      </button>
+    </div>
+
+    <p>
+      To add your own guide to this page, click 
+      <a href="https://optionallybluestudios.github.io/BlueHub/iframe?url=https://forms.gle/EBy537UiSpD2LGfR6&prev=https://optionallybluestudios.github.io/BlueHub/guides">
+        here.
+      </a>
+    </p>
   </div>
 
 </body>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueHub Navigation</title>
+  
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="https://optionallybluestudios.github.io/BlueHub/src/lib/css/cross-page.css" />
+
+  <!-- Optional Google Fonts Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: "Roboto", sans-serif;
+      overflow: hidden; /* Prevent scrollbars */
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: #000000;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin-right: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Fullscreen iframe under navbar */
+    .main-frame {
+      position: absolute;
+      top: 60px; /* height of navbar */
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 60px); /* subtract navbar height */
+      border: none;
+    }
+
+    #backBtn {
+     margin-left: auto;   /* keep it pushed to the right */
+     margin-right: 50px;  /* <-- move it further away from right edge */
+     text-align: center;
+    }
+  </style>
+
+  <script>
+    window.onload = function() {
+      const params = new URLSearchParams(window.location.search);
+
+      // Handle iframe URL
+      const iframe = document.getElementById("mainFrame");
+      const urlParam = params.get("url");
+      iframe.src = urlParam ? decodeURIComponent(urlParam) : "https://es3.tusinean.ro/";
+
+      // Handle back button
+      const prev = params.get("prev");
+      const backBtn = document.getElementById("backBtn");
+      backBtn.onclick = function (event) {
+        event.preventDefault(); // Prevent default anchor behavior
+        if (prev) {
+          window.location.href = decodeURIComponent(prev);
+        } else {
+          history.back();
+        }
+      };
+    };
+  </script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="https://optionallybluestudios.github.io/BlueHub">Home</a>
+    <a href="https://optionallybluestudios.github.io/BlueHub/savedit">Save Editors</a>
+    <a href="https://optionallybluestudios.github.io/BlueHub/cspy">CheatSpy</a>
+    <a href="https://optionallybluestudios.github.io/BlueHub/about">About</a>
+    <a href="https://optionallybluestudios.github.io/BlueHub/guides">Guides</a>
+    <a href="#" id="backBtn" style="margin-left: auto; padding-left: 30px;">← Back</a>
+  </div>
+
+  <!-- Main Page Content -->
+  <iframe
+    id="mainFrame"
+    class="main-frame"
+    allowfullscreen
+  ></iframe>
+
+</body>
+</html>
