@@ -22,11 +22,22 @@
   <!-- Main Page Content -->
   <div class="content">
     <button onclick="installCheatSpy()">Download</button>
+    <br>
+    <button onclick="openCheatSpyApp()">Download</button>
   </div>
 <script>
     function installCheatSpy() {
         alert('Opening CheatSpy installer. NOTE: This will take a while depending on your internet speed since multiple things need to be downloaded.')
         window.pywebview.api.installCheatSpy().then(response => {
+            console.log('Installer Closed.')
+        }).catch(err => {
+            alert("Error calling local script");
+        });
+    }
+
+    function openCSPYApp() {
+        alert('Opening CheatSpy installer. NOTE: This will take a while depending on your internet speed since multiple things need to be downloaded.')
+        window.pywebview.api.openCheatSpyApp().then(response => {
             console.log('Installer Closed.')
         }).catch(err => {
             alert("Error calling local script");
