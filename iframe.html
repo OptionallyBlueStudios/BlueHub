@@ -72,18 +72,6 @@
       const iframe = document.getElementById("mainFrame");
       const urlParam = params.get("url");
       iframe.src = urlParam ? decodeURIComponent(urlParam) : "https://es3.tusinean.ro/";
-
-      // Handle back button
-      const prev = params.get("prev");
-      const backBtn = document.getElementById("backBtn");
-      backBtn.onclick = function (event) {
-        event.preventDefault(); // Prevent default anchor behavior
-        if (prev) {
-          window.location.href = decodeURIComponent(prev);
-        } else {
-          history.back();
-        }
-      };
     };
   </script>
 </head>
