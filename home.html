@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueHub Navigation</title>
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="src/lib/css/cross-page.css" />
+  <!-- Optional Google Fonts Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+
+  <!-- Main Page Content -->
+  <div class="content">
+    <h1>Welcome to BlueHub</h1>
+    <p>All optionally in one place.</p>
+    <br>
+    <a onclick="openCheatSpy()" href="#cheatspy4398yhs"><img src="https://github.com/OptionallyBlueStudios/CheatSpy/raw/main/assets/icons/516x516.png" style="width:60px;height:60px;"></a>
+    <a onclick="openOPTB()" href="#optblogo37tdakjgvn"><img src="https://github.com/OptionallyBlueStudios/cdn/blob/main/hjkhoif90y54y/fdy85ds4/49ujhikad/3hkdjha/3daj90/dsakjg43.png?raw=true" style="width:60px;height:60px;"></a>
+    <a onclick="openDiscord()" href="#discord32687df"><img src="https://cdn-icons-png.freepik.com/512/5968/5968756.png?ga=GA1.1.1897886486.1751731627" style="width:60px;height:60px;"></a>
+    <h2>Updates</h2>
+    <p>[NEW] BlueHub is Open Source<br>Did You Know- BlueHub Is A Web Application<br>BlueHub Is Now Released Officially<br>BlueHub Is Releasing BETA For All CheatSpy Premium Users (CheatSpy Premium Will Be Changed To BlueHub Premium)</p>
+  </div>
+<script>
+    function openDiscord() {
+        window.pywebview.api.openDiscord().then(response => {
+            alert(response);
+        }).catch(err => {
+            alert("Error calling local script");
+        });
+    }
+    function openOPTB() {
+        window.pywebview.api.openOPTB().then(response => {
+            alert(response);
+        }).catch(err => {
+            alert("Error calling local script");
+        });
+    }
+    </script>
+</body>
+</html>

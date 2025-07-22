@@ -7,88 +7,14 @@
 
   <!-- External CSS -->
   <link rel="stylesheet" href="src/lib/css/cross-page.css" />
+  <link rel="stylesheet" href="src/lib/css/guide.css" />
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #0e0e14;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-
-    .navbar {
-      background-color: #000000;
-      padding: 15px 30px;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-      font-weight: bold;
-    }
-
-    .navbar a:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .content {
-      padding: 40px;
-    }
-
-    .guide-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .guide-card {
-      background: #191a24;
-      color: white;
-      width: 300px;
-      padding: 20px;
-      border-radius: 30px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      text-align: center;
-      transition: all 0.3s ease;
-      flex: 0 1 300px;
-      height: 230px;
-    }
-
-    .guide-card h2 {
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .guide-card:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
-    }
-
-    .guide-card button {
-      width: 100%;
-    }
-  </style>
 </head>
 <body>
 
   <!-- Navigation Bar -->
-  <div class="navbar">
-    <a href="https://optionallybluestudios.github.io/BlueHub">Home</a>
-    <a href="savedit">Save Editors</a>
-    <a href="cspy">CheatSpy</a>
-    <a href="about">About</a>
-    <a href="https://optionallybluestudios.github.io/BlueHub/guides">Guides</a>
-  </div>
 
   <script>
     function openUrl(url) {
@@ -108,7 +34,7 @@
           Demonstrates editing money value in the game One Armed Robber.
           Perfect for beginners.
         </p>
-        <button onclick="openUrl('https://optionallybluestudios.github.io/BlueHub/iframe?url=https://www.youtube.com/embed/KmRfqZnGSQY&prev=https://optionallybluestudios.github.io/BlueHub/guides')">
+        <button onclick="openUrl('https://optionallybluestudios.github.io/BlueHub/iframe?url=https://www.youtube.com/embed/KmRfqZnGSQY&prev=https://optionallybluestudios.github.io/BlueHub?page=https://optionallybluestudios.github.io/BlueHub/guides')">
           Play Guide
         </button>
       </div>
@@ -120,7 +46,7 @@
           dev and normal versions. Dev requires BlueHub Premium login. You can
           get a dev login by registering through the link in our discord.
         </p>
-        <button onclick="openUrl('https://optionallybluestudios.github.io/BlueHub/cspy')">
+        <button onclick="openUrl('https://optionallybluestudios.github.io/BlueHub?page=cspy')">
           Open CheatSpy Page
         </button>
       </div>
