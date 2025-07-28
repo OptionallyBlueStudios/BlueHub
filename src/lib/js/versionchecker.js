@@ -1,4 +1,4 @@
-const bhsver = 2; // your constant version
+const bhsver = 2.5; // your constant version
 
 function checkBhverAndRedirect() {
   const urlParams = new URLSearchParams(window.location.search);

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueHub Navigation</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="src/lib/css/cross-page.css" />
+  <link rel="stylesheet" href="src/lib/css/guide.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  
+  <style>
+  /* Modal background */
+  #popupModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+  /* Modal content box */
+  #popupContent {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(44, 44, 63);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  }
+  #popupContent p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+  <script>
+    function openUrl(url) {
+      window.location = url;
+    }
+
+    function showPopup(buttonAction) {
+      const modal = document.getElementById('popupModal');
+      const btnDownload = document.getElementById('popupButton');
+      const btnDismiss = document.getElementById('popupButton2');
+
+      // Show the popup
+      modal.style.display = 'block';
+
+      // Clear old click handlers by cloning the buttons
+      const newBtnDownload = btnDownload.cloneNode(true);
+      btnDownload.parentNode.replaceChild(newBtnDownload, btnDownload);
+
+      const newBtnDismiss = btnDismiss.cloneNode(true);
+      btnDismiss.parentNode.replaceChild(newBtnDismiss, btnDismiss);
+
+      // Download button runs buttonAction and closes popup
+      newBtnDownload.addEventListener('click', () => {
+        buttonAction();
+        modal.style.display = 'none';
+      });
+
+      // Dismiss button just closes the popup
+      newBtnDismiss.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+    }
+
+    // Optional: Close popup if clicking outside the popup content
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('popupModal');
+      const content = document.getElementById('popupContent');
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    function multiopen(fun1, fun2) {
+        fun1()
+        fun2()
+    }
+  </script>
+
+  <!-- Main Page Content -->
+  <div class="content">
+    <h1>Mods</h1>
+    <h2>Please choose your mod manager</h2>
+
+    <div id="popupModal">
+      <div id="popupContent">
+        <p>Not opening?</p>
+        <button id="popupButton2">Dismiss</button>
+        <button id="popupButton">Download</button>
+      </div>
+    </div>
+
+    <div class="guide-container">
+      <div class="guide-card">
+        <h2>r2modman</h2>
+        <p>
+          The base guide for CheatSpy, showing how to use it in basic terms.
+          Demonstrates editing money value in the game One Armed Robber.
+          Perfect for beginners.
+        </p>
+        <button onclick="multiopen(openUrl('ror2mm://'), showPopup(() => { openUrl('https://thunderstore.io/package/ebkr/r2modman/') }))">
+          Open
+        </button>
+      </div>
+
+      <div class="guide-card">
+        <h2>WeMod</h2>
+        <p>
+          WeMod is a popular trainer platform for many games. It is NOT open source and you CANNOT contribute your own mods. It sometimes gets flagged as a virus by anti-viruses but isn't, apparently.
+        </p>
+        <button onclick="multiopen(openUrl('wemod://'), showPopup(() => { openUrl('https://www.wemod.com/download') }))">
+          Open
+        </button>
+      </div>
+
+      <div class="guide-card">
+        <h2>Vortex</h2>
+        <p>
+          Vortex, A Mod Manager Made By Nexus Mods, Is A Modern Mod Manager That Is Designed To Make Modding Your Game Simpler. It Is Open Source And Supposed To Be One Of The Most Secure.
+        </p>
+        <button onclick="multiopen(openUrl('nxm://'), showPopup(() => { openUrl('https://www.nexusmods.com/about/vortex') }))">
+          Open
+        </button>
+      </div>
+
+      <div class="guide-card">
+        <h2>Modrinth App</h2>
+        <p>
+          Modrinth is a modern and extremely secure Minecraft modding platform where you can manage many instances and mods. It is a replacement of the Minecraft launcher and is open source.
+        </p>
+        <button onclick="multiopen(openUrl('modrinth://'), showPopup(() => { openUrl('https://modrinth.com/app') }))">
+          Open
+        </button>
+      </div>
+
+      <div class="guide-card">
+        <h2>Curseforge App</h2>
+        <p>
+          Curseforge, a semi-popular modding platform, supporting a wide array of games. Personally, we don't recommend curseforge since it has had multiple cases of malware being embedded in mods.</p>
+        <button onclick="multiopen(openUrl('modrinth://'), showPopup(() => { openUrl('https://www.curseforge.com/download/app') }))">
+          Open
+        </button>
+      </div>
+    </div>
+
+    <h2>Which one is best for which?</h2>
+    <ul>
+        <li>Modrinth App (For Minecraft)</li>
+        <li>r2modman (For Most Games)</li>
+        <li>Vortex (r2modman Alternative - Less Games And Mods But Everything Is Virus Scanned)</li>
+        <li>Curseforge (For lots of games but high security risk)</li>
+        <li>WeMod (For easy to use mods that are just to help you during the games - It's actually a trainer app)</li>
+    </ul>
+
+    <p style="margin-top: 40px;">
+      Don't want mods? Just want to explore the game yourself and mod it yourself? You can use 
+      <a href="https://optionallybluestudios.github.io/BlueHub/index?page=https://optionallybluestudios.github.io/BlueHub/cspy" style="color: #3399ff;">
+        CheatSpy</a>! CheatSpy is a lightweight python cheat engine that does not flag up against ANY anti virus and is highly flexible. This also means if you prefer to do everything manually, this IS for you! CheatSpy is developed by us and you can read more 
+            <a href="https://optionallybluestudios.github.io/BlueHub/index?page=https://optionallybluestudios.github.io/BlueHub/cspy" style="color: #3399ff;">
+        here</a>.
+        <br>
+        If you don't have any of these installed, you can install them by pressing open then pressing download.
+        <br>
+        <br>
+        OptionallyBlueStudios (UK) 2025 | GNU GPLv3 License
+    </p>
+  </div>
+</body>
+</html>
