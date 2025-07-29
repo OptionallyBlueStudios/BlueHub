@@ -22,23 +22,23 @@
     <button onclick="openCSPYApp()" style="width: 100%; max-width: 100%;">Open</button>
   </div>
 <script>
-    function installCheatSpy() {
-        alert('Opening CheatSpy installer. NOTE: This will take a while depending on your internet speed since multiple things need to be downloaded. You must dismiss this message for the script to continue.')
-        window.pywebview.api.installCheatSpy().then(response => {
-            console.log('Installer Closed.')
-        }).catch(err => {
-            alert("Error calling local script");
-        });
-    }
+function installCheatSpy() {
+    alert('Opening CheatSpy installer. NOTE: This will take a while depending on your internet speed since multiple things need to be downloaded. You must dismiss this message for the script to continue.');
+    window.pywebview.api.installCheatSpy().then(response => {
+        console.log('Installer Closed.');
+    }).catch(err => {
+        alert("Error calling local script");
+    });
+}
 
-    function openCSPYApp() {
-        alert('Opening CheatSpy.. NOTE: This may take a while- some packages may need to be installed. You must dismiss this message for the script to continue.')
-        window.pywebview.api.openCheatSpyApp().then(response => {
-            console.log('Installer Closed.')
-        }).catch(err => {
-            alert("Error calling local script");
-        });
-    }
+function openCSPYApp() {
+    alert('Opening CheatSpy.. NOTE: This may take a while- some packages may need to be installed. You must dismiss this message for the script to continue.');
+    window.pywebview.api.openCheatSpyApp().then(response => {
+        console.log('Installer Closed.');
+    }).catch(err => {
+        alert("Error calling local script");
+    });
+}
 </script>
 </body>
 </html>
