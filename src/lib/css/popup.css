@@ -1,0 +1,28 @@
+#popupModal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+/* Modal content box */
+#popupContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(44, 44, 63);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+#popupContent p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
