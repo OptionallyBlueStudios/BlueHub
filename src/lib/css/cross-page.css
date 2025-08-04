@@ -66,11 +66,6 @@ a {
   transition: all 0.3s ease;
 }
 
-a:hover {
-  color: #1e90ff; /* Slightly deeper blue on hover */
-  border-bottom: 2px solid #1e90ff;
-}
-
 /* Modern button */
 button {
   background-color: #1e1e1e;
@@ -89,4 +84,9 @@ button:hover {
   border-color: #555;
   transform: translateY(-2px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+}
+
+a:not(.repl-styl):hover {
+  color: #1e90ff; /* Slightly deeper blue on hover */
+  border-bottom: 2px solid #1e90ff;
 }
