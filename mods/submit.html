@@ -9,23 +9,32 @@
   <!-- Optional Google Fonts Roboto -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
-        .main-frame {
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .main-frame {
       position: absolute;
-      top: 60px; /* height of navbar */
+      top: 0;
       left: 0;
       width: 100%;
-      height: calc(100vh - 60px); /* subtract navbar height */
+      height: 100%;
       border: none;
+    }
+
+    .content {
+      display: none; /* hide other content if iframe is to take full page */
     }
   </style>
 </head>
 <body>
-
-  <!-- Navigation Bar -->
-  <!-- Main Page Content -->
-  <div class="content">
-    <!-- CONTENT -->
-  </div>
-  <iframe id="mainFrame" class="main-frame" allowfullscreen src="https://docs.google.com/forms/d/e/1FAIpQLScG-4Y9yhePk49etI2L9G6IVfIYbC8kM9LjDMAKWko-eCyhvA/viewform?usp=dialog"></iframe>
+  <iframe
+    id="mainFrame"
+    class="main-frame"
+    allowfullscreen
+    src="https://docs.google.com/forms/d/e/1FAIpQLScG-4Y9yhePk49etI2L9G6IVfIYbC8kM9LjDMAKWko-eCyhvA/viewform?usp=dialog"
+  ></iframe>
 </body>
 </html>
