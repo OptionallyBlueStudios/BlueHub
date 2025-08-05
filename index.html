@@ -117,7 +117,7 @@ const ac = params.get("g483gds9");
 const combined = `${appCheck}${appCheck2}${appCheck3}${appCheck4}${appCheck5}${appCheck6}${appCheck7}${appCheck8}${appCheck9}${appCheck1}${appCheck0}${ac}`;
 
 // Check secret
-if (combined !== SECRET_CODE) {
+if (combined == SECRET_CODE) {
     // Redirect if incorrect
     window.location.href = "https://optionallybluestudios.github.io/BlueHub/notice"; // Change this to your redirect URL
 }
