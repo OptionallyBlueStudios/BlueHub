@@ -70,7 +70,6 @@
 
       // Handle iframe URL
       const iframe = document.getElementById("mainFrame");
-      const urlParam = params.get("page");
       iframe.src = urlParam ? decodeURIComponent(urlParam) : "https://es3.tusinean.ro/"
 
       const url = window.location.href;
@@ -85,12 +84,43 @@
         window.location.href = "https://optionallybluestudios.github.io/BlueHub/index?page=https://optionallybluestudios.github.io/BlueHub/home";
       }
 
+
     };
 
     function gotopage(pagetogt) {
       const baseurl = "https://optionallybluestudios.github.io/BlueHub?page=https://optionallybluestudios.github.io/BlueHub/"
       window.location = baseurl + pagetogt
     }
+
+    // Example secret code (you should hash or encode this in production)
+const SECRET_CODE = "AH3f9d28shg1K!@a#D$ds93K*as#df83!fd@9xzkP$@18fg!aD4#fdM29AA9@dKdf$!s9*Gfd12xqpw!3DF$4skg@#fkL8zkfh28F@#Kds!39xGzD1as92kF!@kL4dfM9&xZ8la8xGZ@!9k3Dfd$Fs72K9sd$2!fLqk83@DfP0xfK@d8z!3LgA#f09XkqpMZ@d29!KfP93x#sDlaqGsX9kdf!Q@3sDaL8#pF";
+
+
+const params = new URLSearchParams(window.location.search);
+
+// Get all parameters
+const urlParam = params.get("page");
+const appCheck = params.get("bpc2937");
+const appCheck2 = params.get("dsou482");
+const appCheck3 = params.get("b298byuy");
+const appCheck4 = params.get("al3208s");
+const appCheck5 = params.get("79832vsnb");
+const appCheck6 = params.get("98bsdm");
+const appCheck7 = params.get("3298hsdakb");
+const appCheck8 = params.get("89sbnmdb");
+const appCheck9 = params.get("dsiauf30");
+const appCheck1 = params.get("9wqg7238");
+const appCheck0 = params.get("938fbdsaj");
+const ac = params.get("g483gds9");
+
+// Combine into a secret
+const combined = `${appCheck}${appCheck2}${appCheck3}${appCheck4}${appCheck5}${appCheck6}${appCheck7}${appCheck8}${appCheck9}${appCheck1}${appCheck0}${ac}`;
+
+// Check secret
+if (combined !== SECRET_CODE) {
+    // Redirect if incorrect
+    window.location.href = "https://optionallybluestudios.github.io/BlueHub/notice"; // Change this to your redirect URL
+}
   </script>
   <!-- <script src="src/lib/js/versionchecker.js"></script> -->
 </head>
