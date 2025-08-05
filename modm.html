@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueHub Navigation</title>
+
+  <link rel="stylesheet" href="src/lib/css/cross-page.css" />
+  <link rel="stylesheet" href="src/lib/css/guide.css" />
+  <link rel="stylesheet" href="src/lib/css/popup.css" />
+  <style>
+    /* Common styles for banners */
+    .popup,
+    .warning {
+      position: fixed;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background-color: #13122c;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      font-family: sans-serif;
+      font-size: 16px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+
+    /* POPUP (bottom-left) */
+    .popup {
+      bottom: 0;
+      left: 0;
+      border-radius: 0 12px 12px;
+      transform: translateY(100%) rotateX(180deg);
+      animation: slideUp 0.6s ease-out forwards;
+      margin: 10px;
+    }
+
+    /* WARNING (top-right) */
+    .warning {
+      top: 0;
+      right: 0;
+      border-radius: 12px 12px 0;
+      transform: translateY(-100%) rotateX(180deg);
+      animation: slideDown 0.6s ease-out forwards;
+      margin: 10px;
+    }
+
+    .popup a:not(.nop),
+    .warning a:not(.nop) {
+      position: relative;
+      display: inline-block;
+      padding: 8px 16px;
+      color: inherit;
+      text-decoration: none;
+      overflow: hidden;
+    }
+
+    .popup a:not(.nop)::after,
+    .warning a:not(.nop)::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: #1e90ff;
+      transition: width 0.4s ease, left 0.4s ease;
+      transform: translateX(-50%);
+    }
+
+    .popup a:not(.nop):hover::after,
+    .warning a:not(.nop):hover::after {
+      width: 100%;
+      left: 0;
+      transform: none;
+    }
+
+    .popup .text,
+    .warning .text {
+      transform: rotateX(180deg);
+    }
+
+    @keyframes slideUp {
+      to {
+        transform: translateY(0) rotateX(180deg);
+      }
+    }
+
+    @keyframes slideDown {
+      to {
+        transform: translateY(0) rotateX(180deg);
+      }
+    }
+
+    @keyframes slideOutUp {
+      to {
+        transform: translateY(-150%) rotateX(180deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes slideOutDown {
+      to {
+        transform: translateY(150%) rotateX(180deg);
+        opacity: 0;
+      }
+    }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <script src="src/lib/js/mods/mainscript.js"></script>
+
+  <div class="content">
+    <h1>Mods (Third-Party)</h1>
+    <h2>Please choose your mod manager</h2>
+
+    <div id="popupModal">
+      <div id="popupContent">
+        <p>Not opening?</p>
+        <button id="popupButton2">Dismiss</button>
+        <button id="popupButton">Download</button>
+      </div>
+    </div>
+
+    <div class="guide-container">
+      <div class="guide-card">
+        <h2>r2modman</h2>
+        <p>
+          The base guide for CheatSpy, showing how to use it in basic terms.
+          Demonstrates editing money value in the game One Armed Robber.
+          Perfect for beginners.
+        </p>
+        <button onclick="multiopen(openUrl('ror2mm://'), showPopup(() => { openUrl('https://thunderstore.io/package/ebkr/r2modman/') }))">
+          Open
+        </button>
+      </div>
+
+      <div class="guide-card">
+        <h2>WeMod</h2>
+        <p>
+          WeMod is a popular trainer platform for many games. It is NOT open source and you CANNOT contribute your own mods. It sometimes gets flagged as a virus by anti-viruses but isn't, apparently.
+        </p>
+        <button onclick="multiopen(openUrl('wemod://'), showPopup(() => { openUrl('https://www.wemod.com/download') }))">
+          Open
+        </button>
+      </div>
+
+      <div class="guide-card">
+        <h2>Vortex</h2>
+        <p>
+          Vortex, A Mod Manager Made By Nexus Mods, Is A Modern Mod Manager That Is Designed To Make Modding Your Game Simpler. It Is Open Source And Supposed To Be One Of The Most Secure.
+        </p>
+        <button onclick="multiopen(openUrl('nxm://'), showPopup(() => { openUrl('https://www.nexusmods.com/about/vortex') }))">
+          Open
+        </button>
+      </div>
+
+      <div class="guide-card">
+        <h2>Modrinth App</h2>
+        <p>
+          Modrinth is a modern and extremely secure Minecraft modding platform where you can manage many instances and mods. It is a replacement of the Minecraft launcher and is open source.
+        </p>
+        <button onclick="multiopen(openUrl('modrinth://'), showPopup(() => { openUrl('https://modrinth.com/app') }))">
+          Open
+        </button>
+      </div>
+
+      <div class="guide-card">
+        <h2>Curseforge App</h2>
+        <p>
+          Curseforge, a semi-popular modding platform, supporting a wide array of games. Personally, we don't recommend curseforge since it has had multiple cases of malware being embedded in mods.</p>
+        <button onclick="multiopen(openUrl('modrinth://'), showPopup(() => { openUrl('https://www.curseforge.com/download/app') }))">
+          Open
+        </button>
+      </div>
+    </div>
+
+    <h2>Which one is best for which?</h2>
+    <ul>
+        <li>Modrinth App (For Minecraft)</li>
+        <li>r2modman (For Most Games)</li>
+        <li>Vortex (r2modman Alternative - Less Games And Mods But Everything Is Virus Scanned)</li>
+        <li>Curseforge (For lots of games but high security risk)</li>
+        <li>WeMod (For easy to use mods that are just to help you during the games - It's actually a trainer app)</li>
+    </ul>
+
+    <p style="margin-top: 40px;">
+      Don't want mods? Just want to explore the game yourself and mod it yourself? You can use 
+      <a href="https://optionallybluestudios.github.io/BlueHub/index?page=https://optionallybluestudios.github.io/BlueHub/cspy" style="color: #3399ff;">
+        CheatSpy</a>! CheatSpy is a lightweight python cheat engine that does not flag up against ANY anti virus and is highly flexible. This also means if you prefer to do everything manually, this IS for you! CheatSpy is developed by us and you can read more 
+            <a href="https://optionallybluestudios.github.io/BlueHub/index?page=https://optionallybluestudios.github.io/BlueHub/cspy" style="color: #3399ff;">
+        here</a>.
+        <br>
+        If you don't have any of these installed, you can install them by pressing open then pressing download.
+        <br>
+        <br>
+        OptionallyBlueStudios (UK) 2025 | GNU GPLv3 License
+    </p>
+  </div>
+
+  <!-- Popup Banner (bottom-left) -->
+  <div class="popup" style="border-top: 2px solid #1e90ff;" id="bm">
+    <div class="text">
+      <h2 id="randomHeading">Want a new modding experience?</h2>
+      <p id="randomParagraph">Why not try BlueMod - The safer approach?</p>
+      <div class="navbar" style="background-color: #13122c; text-align: center;">
+        <a class="repl-styl" href="#nope" id="emailnotif">Coming Soon..</a>
+        <a class="repl-styl" id="dismissbm">No thanks!</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Warning Banner (top-right) -->
+  <div class="warning" style="border-bottom: 2px solid #ffd61e;">
+    <div class="text">
+      <p><b>⚠️ WARNING: These are provided by a THIRD PARTY ⚠️</b></p>
+    </div>
+  </div>
+
+  <!-- Scripts (stay at the end) -->
+  <script>
+    // Random message logic
+    const messages = [
+      { heading: "Want a new modding experience?", paragraph: "Why not try BlueMod- The safer approach?" },
+      { heading: "Tired of sketchy sites?", paragraph: "BlueMod keeps your mods clean and safe." },
+      { heading: "Want to be assured your files are safe?", paragraph: "Switch to BlueMod and enjoy mods that are scanned every upload." },
+      { heading: "All of these mod loaders too boring?", paragraph: "BlueMod is designed with gamers in mind." },
+      { heading: "Want something new?", paragraph: "Take a minute to check out BlueMod!" },
+      { heading: "Tired of the same re-skinned mod managers?", paragraph: "Get BlueMod! It's free.." },
+      { heading: "Don't fancy any of these?", paragraph: "Why not try BlueMod! After all, it's free.." },
+      { heading: "Want to keep your files private and hidden?", paragraph: "Why not try BlueMod! We don't want to know what's in <i>your</i> files!" },
+      { heading: "Don't want to download anything?", paragraph: "BlueMod is completely online<a class='nop' href='https://optionallybluestudios.github.io/BlueHub/legalstuff/bluemod/ad9'>*</a>!" },
+      { heading: "Want a safer modding experience?", paragraph: "Why not try BlueMod- The newer approach?" },
+      { heading: "Want a faster modding experience?", paragraph: "Do traditional mod managers take too much of your computer's resources? Try BlueMod- A Lightweight, Faster Approach To Modding!" }
+    ];
+  // Randomly assign one at load (existing logic)
+  const randomIndex = Math.floor(Math.random() * messages.length);
+  const message = messages[randomIndex];
+  document.getElementById('randomHeading').textContent = message.heading;
+  document.getElementById('randomParagraph').innerHTML = message.paragraph;
+
+  var cli = false
+
+  // ✅ Custom console-accessible function
+  window.OPTB_changeBmPopup = function(index) {
+    if (cli == true) {
+      if (index < 0 || index >= messages.length) {
+        console.warn(`Invalid index: ${index}. Must be between 0 and ${messages.length - 1}.`);
+        return;
+      }
+      const msg = messages[index];
+      document.getElementById('randomHeading').textContent = msg.heading;
+      document.getElementById('randomParagraph').innerHTML = msg.paragraph;
+      console.log(`Popup updated to message #${index}.`);
+    } else {
+      console.log('[OPTB CLI]: Enable CLI First- OPTB_cli("password", true). Replace password with the password.')
+    }
+  };
+
+  window.OPTB_cli = function(val, tf) {
+    if (val == "moincraft" && tf == true) {
+      console.log('[OPTB CLI]: Enabled CLI')
+      cli = true
+    }
+    if (val != "moincraft") {
+      console.log('[OPTB CLI]: Incorrect Password')
+    }
+    if (val == "moincraft" && tf == false) {
+      console.log('[OPTB CLI]: Disabled CLI')
+      cli = false
+    }
+  }
+  </script>
+
+  <script>
+    // Auto-slide-out warning banner after 3s
+    setTimeout(() => {
+      const warning = document.getElementById("warningBanner");
+      if (warning) {
+        warning.style.animation = "slideOutUp 0.6s ease-in forwards";
+      }
+    }, 3000);
+  </script>
+
+  <script>
+    // Manual dismiss warning
+    document.getElementById("dismissWarningButton").addEventListener("click", function () {
+      const warning = document.getElementById("warningBanner");
+      if (warning) {
+        warning.style.animation = "slideOutUp 0.6s ease-in forwards";
+        setTimeout(() => warning.style.display = "none", 600);
+      }
+      this.style.display = "none";
+    });
+  </script>
+
+  <script>
+    // Dismiss popup on click with animation
+    document.getElementById("dismissbm").addEventListener("click", function () {
+      const popup = document.getElementById("bm");
+      if (popup) {
+        popup.style.animation = "slideOutDown 0.6s ease-in forwards";
+        setTimeout(() => popup.style.display = "none", 600);
+      }
+      this.style.display = "none";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/lib/css/cross-page.css" />
+  <title>BlueMod</title>
+  <style>
+    .images img {
+      border-radius: 10px;
+      box-shadow: 0 10px 16px 0 #000000;
+      transition: all 0.3s ease;
+    }
+
+    .images img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 30px 0 #303030;
+    }
+        body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background-color: #0a0f23;
+    }
+
+    .game-section {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .game-card {
+      display: inline-block;
+      position: relative;
+      width: 180px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 16px #000;
+    }
+
+    .game-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .game-card img:hover {
+      transform: scale(1.05);
+    }
+
+.download-button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #28a745 !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 0 !important;
+  font-size: 14px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  border-radius: 0 0 10px 10px !important;
+  transition: none !important;
+}
+
+.download-button:hover,
+.download-button:focus,
+.download-button:active {
+  background-color: #28a745 !important;
+  color: white !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+    .download-button svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+
+    .game-title {
+      font-size: 18px;
+      margin-top: 12px;
+      color: #aaa;
+    }
+  </style>
+  <script>
+    function goto(page) {
+      window.location = page
+    }
+  </script>
+</head>
+<body>
+  <div style="margin-top: 100px; margin-bottom: 50px; text-align: center; font-size: 30px;">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
+      <h1 style="margin: 0;">BlueMod</h1>
+    </div>
+    <p style="margin-top: 10px;">The New Era Of Modding</p>
+  </div>
+  <hr width="90%" style="border-color: rgba(128, 128, 128, 0.438);" />
+  <h2 style="text-align: center;">Choose Your Game!</h2>
+  <div class="game-title" style="text-align: center;">No Mods Yet!</div>
+  <div style="text-align: center;" class="images">
+    <img src="/src/lib/imgs/bluemod2.png" height="180px" alt="Game Cover" onclick="goto('https://optionallybluestudios.github.io/BlueHub/mods/submit')">
+    <br>
+    <div class="game-title">Submit A Mod | Supports Any Game | You don't have to own the mod</div>
+  </div>
+</body>
+</html>

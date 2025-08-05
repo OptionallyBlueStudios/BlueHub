@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/lib/css/cross-page.css" />
+  <title>BlueMod</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background-color: #0a0f23;
+    }
+
+    .game-section {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .game-card {
+      display: inline-block;
+      position: relative;
+      width: 180px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 16px #000;
+    }
+
+    .game-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .game-card img:hover {
+      transform: scale(1.05);
+    }
+
+.download-button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #28a745 !important;
+  color: white !important;
+  border: none !important;
+  padding: 10px 0 !important;
+  font-size: 14px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  border-radius: 0 0 10px 10px !important;
+  transition: none !important;
+}
+
+.download-button:hover,
+.download-button:focus,
+.download-button:active {
+  background-color: #28a745 !important;
+  color: white !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+    .download-button svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+
+    .game-title {
+      font-size: 18px;
+      margin-top: 12px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div style="margin-top: 50px; margin-bottom: 25px; text-align: center; font-size: 25px;">
+    <div style="display: flex; justify-content: center; align-items: center; gap: 30px;">
+      <h1 style="margin: 0;">BlueMod | Peak</h1>
+    </div>
+  </div>
+
+  <hr width="90%" style="border-color: rgba(128, 128, 128, 0.438);" />
+
+  <div class="game-section">
+
+    <div class="game-card">
+      <!-- Game Image -->
+      <img
+        src="/src/lib/imgs/game-covers/peak.png"
+        alt="Peak Game"
+        onclick="window.location.href='https://store.steampowered.com/app/3527290/PEAK/'"
+      />
+
+      <!-- Download Button OVER the image -->
+      <button class="download-button" onclick="window.location.href='https://store.steampowered.com/app/3527290/PEAK/'"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-9 2v2h18v-2H3z" /></svg>Buy</button>
+    </div>
+
+    <!-- Game Title -->
+    <div class="game-title">Peak (Steam)</div>
+    <div class="game-title">No Mods Yet!</div>
+  </div>
+</body>
+</html>
